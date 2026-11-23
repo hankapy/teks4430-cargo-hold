@@ -1,0 +1,29 @@
+# ROS2 build artifacts — never commit these
+build/
+install/
+log/
+
+# Local environment config — each student sets their own
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS
+.DS_Store
+
+# VS Code workspace-specific (keep .devcontainer/)
+.vscode/settings.json
+.vscode/launch.json
+
+# Analysis output
+analysis/out/
+
+# pytest
+.pytest_cache/
+
+# Webots project files
+src/worlds/.*.wbproj
+src/worlds/.*.jpg

@@ -1,0 +1,25 @@
+
+coal_methane
+  manual     detect - h, max T 15.0, max CH4 86.0, h CH4>20 41.5, mean vent 0.53, T>=60 at - h
+  autonomous detect - h (exhaust only - h), hotspot -1 (true -1), crew action - h, fault - h
+             max T 15.0, max CH4 14.4, h CH4>20 0.0, mean vent 0.25, vent switches 1, rover visits 69, rover faults 0, T>=60 at - h
+
+coal_selfheat
+  manual     detect 32.0 h, max T 51.8, max CH4 0.0, h CH4>20 0.0, mean vent 0.20, T>=60 at - h
+  autonomous detect 16.9 h (exhaust only - h), hotspot 1 (true 1), crew action 46.4 h, fault - h
+             max T 38.1, max CH4 0.0, h CH4>20 0.0, mean vent 0.00, vent switches 0, rover visits 73, rover faults 0, T>=60 at - h
+
+coal_both
+  manual     detect 32.0 h, max T 150.0, max CH4 59.0, h CH4>20 28.2, mean vent 0.53, T>=60 at 34.5 h
+  autonomous detect 10.0 h (exhaust only 21.4 h), hotspot 1 (true 1), crew action 10.0 h, fault - h
+             max T 150.0, max CH4 15.2, h CH4>20 0.0, mean vent 0.17, vent switches 1, rover visits 74, rover faults 0, T>=60 at 35.1 h
+
+limestone
+  manual     detect - h, max T 15.0, max CH4 0.0, h CH4>20 0.0, mean vent 0.20, T>=60 at - h
+  autonomous detect - h (exhaust only - h), hotspot -1 (true -1), crew action - h, fault - h
+             max T 15.0, max CH4 0.0, h CH4>20 0.0, mean vent 0.00, vent switches 0, rover visits 69, rover faults 0, T>=60 at - h
+
+limestone_co_drift
+  manual     detect - h, max T 15.0, max CH4 0.0, h CH4>20 0.0, mean vent 0.20, T>=60 at - h
+  autonomous detect - h (exhaust only 28.3 h), hotspot -1 (true -1), crew action - h, fault 35.7 h
+             max T 15.0, max CH4 0.0, h CH4>20 0.0, mean vent 0.00, vent switches 0, rover visits 69, rover faults 0, T>=60 at - h

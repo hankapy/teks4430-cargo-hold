@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<!-- Minimal URDF: only loads the Python driver plugin -->
+<robot name="cargo_hold">
+  <link name="base_link"/>
+  <webots>
+    <plugin type="hold_autonomy.hold_driver.HoldDriver"/>
+  </webots>
+</robot>

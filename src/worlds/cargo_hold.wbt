@@ -1,0 +1,393 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+
+WorldInfo {
+  info [
+    "TEKS4430 course project"
+    "Bulk carrier cargo hold: gas monitoring and surface ventilation"
+    "Front wall is transparent to show the cargo"
+    "Rover on the deck rail samples gas from four ports, one per zone"
+  ]
+  title "Cargo hold monitoring"
+  basicTimeStep 32
+}
+Viewpoint {
+  orientation -0.1949 0.4101 0.8910 0.9798
+  position -11 -14 12.5
+}
+TexturedBackground {
+  texture "noon_cloudy_countryside"
+}
+TexturedBackgroundLight {
+  texture "noon_cloudy_countryside"
+}
+
+# ---------------------------------------------------------------- hull (static)
+Solid {
+  translation 0 0 0.15
+  children [
+    Shape {
+      appearance DEF HULL_MAT PBRAppearance { baseColor 0.25 0.3 0.35 roughness 0.6 metalness 0.3 }
+      geometry Box { size 12 8 0.3 }
+    }
+  ]
+  name "tank_top"
+}
+Solid {
+  translation 0 3.85 3.15
+  children [
+    Shape {
+      appearance USE HULL_MAT
+      geometry Box { size 12 0.3 5.7 }
+    }
+  ]
+  name "wall_port"
+}
+Solid {
+  translation 0 -3.85 3.15
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.9 0.9 0.9
+        transparency 0.85
+        roughness 0.1
+        metalness 0
+      }
+      geometry Box { size 12 0.3 5.7 }
+    }
+  ]
+  name "wall_starboard_cutaway"
+}
+Solid {
+  translation 5.85 0 3.15
+  children [
+    Shape {
+      appearance USE HULL_MAT
+      geometry Box { size 0.3 7.4 5.7 }
+    }
+  ]
+  name "bulkhead_fwd"
+}
+Solid {
+  translation -5.85 0 3.15
+  children [
+    Shape {
+      appearance USE HULL_MAT
+      geometry Box { size 0.3 7.4 5.7 }
+    }
+  ]
+  name "bulkhead_aft"
+}
+Solid {
+  translation 0 0 6.15
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.45 0.47 0.5
+        roughness 0.7
+        metalness 0.2
+      }
+      geometry Box { size 12 8 0.3 }
+    }
+  ]
+  name "main_deck"
+}
+Solid {
+  translation -0.5 0 6.55
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.1 0.35 0.45
+        roughness 0.5
+        metalness 0.3
+      }
+      geometry Box { size 7.5 5.5 0.5 }
+    }
+  ]
+  name "hatch_cover"
+}
+
+# ---------------------------------------------------------------- cargo
+Solid {
+  translation 0 0 1.8
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.08 0.08 0.08
+        roughness 1
+        metalness 0
+      }
+      geometry Box { size 11.4 7.4 3 }
+    }
+  ]
+  name "cargo_coal"
+}
+
+# ---------------------------------------------------------------- ventilation trunks
+Solid {
+  translation 4.5 2.5 7.05
+  children [
+    Shape {
+      appearance DEF TRUNK_MAT PBRAppearance { baseColor 0.85 0.85 0.8 roughness 0.5 metalness 0.4 }
+      geometry Cylinder { radius 0.35 height 1.5 }
+    }
+  ]
+  name "intake_trunk"
+}
+Solid {
+  translation 4.5 -2.5 7.05
+  children [
+    Shape {
+      appearance USE TRUNK_MAT
+      geometry Cylinder { radius 0.35 height 1.5 }
+    }
+  ]
+  name "exhaust_trunk"
+}
+Solid {
+  translation -5.75 -1.6 6.8
+  children [
+    Shape {
+      appearance USE TRUNK_MAT
+      geometry Box { size 0.3 1.2 1 }
+    }
+  ]
+  name "control_panel"
+}
+# sea surface
+Solid {
+  translation 0 0 0.6
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.05 0.25 0.4
+        roughness 0.2
+        metalness 0
+      }
+      geometry Plane { size 400 400 }
+    }
+  ]
+  name "sea"
+}
+
+# ---------------------------------------------------------------- sampling rail and ports (zone centres)
+Solid {
+  translation 0 -3.15 6.33
+  children [ Shape { appearance DEF RAIL_MAT PBRAppearance { baseColor 0.55 0.55 0.58 roughness 0.4 metalness 0.8 } geometry Box { size 11.2 0.06 0.06 } } ]
+  name "rail_inner"
+}
+Solid {
+  translation 0 -3.45 6.33
+  children [ Shape { appearance USE RAIL_MAT geometry Box { size 11.2 0.06 0.06 } } ]
+  name "rail_outer"
+}
+Solid {
+  translation -4.275 -3.3 6.31
+  children [ Shape { appearance DEF PORT_MAT PBRAppearance { baseColor 0.95 0.75 0.1 roughness 0.5 metalness 0.2 } geometry Cylinder { radius 0.1 height 0.02 } } ]
+  name "sampling_port_0"
+}
+Solid {
+  translation -1.425 -3.3 6.31
+  children [ Shape { appearance USE PORT_MAT geometry Cylinder { radius 0.1 height 0.02 } } ]
+  name "sampling_port_1"
+}
+Solid {
+  translation 1.425 -3.3 6.31
+  children [ Shape { appearance USE PORT_MAT geometry Cylinder { radius 0.1 height 0.02 } } ]
+  name "sampling_port_2"
+}
+Solid {
+  translation 4.275 -3.3 6.31
+  children [ Shape { appearance USE PORT_MAT geometry Cylinder { radius 0.1 height 0.02 } } ]
+  name "sampling_port_3"
+}
+
+# ---------------------------------------------------------------- actuators (robot)
+Robot {
+  name "cargo_hold"
+  controller "<extern>"
+  children [
+    # intake fan
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+        anchor 4.5 2.5 7.85
+      }
+      device [
+        RotationalMotor {
+          name "fan_motor"
+          maxVelocity 30
+          acceleration 10
+        }
+        PositionSensor {
+          name "fan_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation 4.5 2.5 7.85
+        children [
+          Shape {
+            appearance DEF ROTOR_MAT PBRAppearance {
+              baseColor 0.9 0.5 0.1
+              roughness 0.4
+              metalness 0.5
+            }
+            geometry Cylinder { radius 0.07 height 0.08 }
+          }
+          Pose {
+            children [
+              DEF BLADE Shape {
+                appearance USE ROTOR_MAT
+                geometry Box { size 0.62 0.09 0.02 }
+              }
+            ]
+          }
+          Pose {
+            rotation 0 0 1 1.5708
+            children [ USE BLADE ]
+          }
+        ]
+        name "fan_rotor"
+      }
+    }
+    # exhaust damper lid, 0 = closed
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 -1 0
+        anchor 4.1 -2.5 7.825
+      }
+      device [
+        RotationalMotor {
+          name "damper_motor"
+          maxVelocity 0.7
+          minPosition 0
+          maxPosition 1.5
+        }
+        PositionSensor {
+          name "damper_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation 4.5 -2.5 7.825
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.2 0.2 0.2
+              roughness 0.5
+              metalness 0.5
+            }
+            geometry Cylinder { radius 0.4 height 0.05 }
+          }
+        ]
+        name "damper_lid"
+      }
+    }
+    # sampling rover on the rail, position 0 at x = -5.4
+    SliderJoint {
+      jointParameters JointParameters {
+        axis 1 0 0
+      }
+      device [
+        LinearMotor {
+          name "rover_motor"
+          maxVelocity 0.8
+          acceleration 1.0
+        }
+        PositionSensor {
+          name "rover_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation -5.4 -3.3 6.485
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.95 0.55 0.05
+              roughness 0.5
+              metalness 0.3
+            }
+            geometry Box { size 0.45 0.5 0.25 }
+          }
+          # gas probe, lowered into the sampling ports
+          SliderJoint {
+            jointParameters JointParameters {
+              axis 0 0 -1
+            }
+            device [
+              LinearMotor {
+                name "probe_motor"
+                maxVelocity 0.4
+                minPosition 0
+                maxPosition 0.42
+              }
+              PositionSensor {
+                name "probe_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0 0 0.07
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.8 0.8 0.85
+                    roughness 0.3
+                    metalness 0.9
+                  }
+                  geometry Cylinder { radius 0.02 height 0.5 }
+                }
+                Pose {
+                  translation 0 0 0.25
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.8 0.1 0.1
+                        roughness 0.4
+                        metalness 0
+                      }
+                      geometry Sphere { radius 0.05 }
+                    }
+                  ]
+                }
+              ]
+              name "probe"
+            }
+          }
+        ]
+        name "rover"
+      }
+    }
+    # status lights on the control panel
+    LED {
+      translation -5.93 -1.9 7.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.2 0.2 0.2
+            roughness 0.3
+            metalness 0
+          }
+          geometry Sphere { radius 0.12 }
+        }
+      ]
+      name "status_led"
+      color [ 0 1 0, 1 0.75 0, 1 0 0 ]
+    }
+    LED {
+      translation -5.93 -1.3 7.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.2 0.2 0.2
+            roughness 0.3
+            metalness 0
+          }
+          geometry Sphere { radius 0.12 }
+        }
+      ]
+      name "alert_led"
+      color [ 1 0 0 ]
+    }
+  ]
+}
