@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="860" viewBox="0 0 1500 860">
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#333"/></marker><marker id="arrd" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#777"/></marker></defs>
+<rect width="1500" height="860" fill="#ffffff"/>
+<text x="750.0" y="36" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#222">Lastiruuman kaasuvalvonta ja tuuletus: järjestelmäarkkitehtuuri (ROS 2 + Webots)</text>
+<rect x="30" y="60" width="320" height="690" rx="14" fill="#eef1f3" stroke="#607d8b" stroke-width="1.5"/>
+<text x="190.0" y="86" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#607d8b">Simulaatio</text>
+<text x="190.0" y="104" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#607d8b">Webots + prosessimalli</text>
+<rect x="400" y="60" width="290" height="690" rx="14" fill="#e8f2fc" stroke="#1e88e5" stroke-width="1.5"/>
+<text x="545.0" y="86" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#1e88e5">Sensing and perception</text>
+<text x="545.0" y="104" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#1e88e5">havainnointi</text>
+<rect x="740" y="60" width="290" height="690" rx="14" fill="#fff6e5" stroke="#ef8f00" stroke-width="1.5"/>
+<text x="885.0" y="86" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#ef8f00">Reasoning, planning and</text>
+<text x="885.0" y="104" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#ef8f00">decision-making</text>
+<rect x="1080" y="60" width="390" height="690" rx="14" fill="#eaf6eb" stroke="#43a047" stroke-width="1.5"/>
+<text x="1275.0" y="86" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#43a047">Act and control</text>
+<text x="1275.0" y="104" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#43a047">toiminta ja ohjaus</text>
+<rect x="50" y="150" width="260" height="215" rx="10" fill="#ffffff" stroke="#607d8b" stroke-width="2.5"/>
+<rect x="50" y="150" width="260" height="34" rx="10" fill="#607d8b" stroke="#607d8b" stroke-width="0"/>
+<rect x="50" y="170" width="260" height="14" rx="0" fill="#607d8b" stroke="#607d8b" stroke-width="0"/>
+<text x="180.0" y="173" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#ffffff">Webots: hold_driver</text>
+<text x="64" y="206" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">lisäosa, cargo_hold.wbt</text>
+<text x="64" y="226" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">tuuletin (nopeussäätö)</text>
+<text x="64" y="246" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">poistopelti (asento)</text>
+<text x="64" y="266" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">vaunu kiskolla (nopeussäätö)</text>
+<text x="64" y="286" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">näytesondi (asento)</text>
+<text x="64" y="306" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">merkkivalot: tila + hälytys</text>
+<rect x="50" y="470" width="260" height="175" rx="10" fill="#ffffff" stroke="#607d8b" stroke-width="2.5"/>
+<rect x="50" y="470" width="260" height="34" rx="10" fill="#607d8b" stroke="#607d8b" stroke-width="0"/>
+<rect x="50" y="490" width="260" height="14" rx="0" fill="#607d8b" stroke="#607d8b" stroke-width="0"/>
+<text x="180.0" y="493" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#ffffff">plant_sim</text>
+<text x="64" y="526" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">4 vyöhykkeen prosessimalli:</text>
+<text x="64" y="546" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">T, O₂, CO, CH₄ + sekoittuminen</text>
+<text x="64" y="566" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">kiinteä poistoanturi</text>
+<text x="64" y="586" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">vaunun sondianturi (viive)</text>
+<text x="64" y="606" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">todellinen tila: truth</text>
+<rect x="415" y="290" width="260" height="235" rx="10" fill="#ffffff" stroke="#1e88e5" stroke-width="2.5"/>
+<rect x="415" y="290" width="260" height="34" rx="10" fill="#1e88e5" stroke="#1e88e5" stroke-width="0"/>
+<rect x="415" y="310" width="260" height="14" rx="0" fill="#1e88e5" stroke="#1e88e5" stroke-width="0"/>
+<text x="545.0" y="313" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#ffffff">perception</text>
+<text x="429" y="346" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">CH₄-, CO- ja O₂-suodatus</text>
+<text x="429" y="366" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">CO:n tuotto vyöhykkeittäin:</text>
+<text x="445" y="386" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">g = dCO/dt + k·CO − sekoitus</text>
+<text x="429" y="406" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">kuumenemiskohdan paikannus</text>
+<text x="429" y="426" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">anturivian tunnistus</text>
+<text x="445" y="446" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">(poistoanturi vs. vaunu)</text>
+<text x="429" y="466" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">mittauksen luotettavuus</text>
+<rect x="755" y="270" width="260" height="275" rx="10" fill="#ffffff" stroke="#ef8f00" stroke-width="2.5"/>
+<rect x="755" y="270" width="260" height="34" rx="10" fill="#ef8f00" stroke="#ef8f00" stroke-width="0"/>
+<rect x="755" y="290" width="260" height="14" rx="0" fill="#ef8f00" stroke="#ef8f00" stroke-width="0"/>
+<text x="885.0" y="293" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#ffffff">hold_manager</text>
+<text x="885.0" y="326" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#555" font-style="italic">py_trees-käyttäytymispuu</text>
+<text x="769" y="348" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">1  CH₄ ≥ 20 % LEL → PURGE</text>
+<text x="769" y="368" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">2  CH₄ &gt; 5 % LEL → PI-säätö</text>
+<text x="801" y="388" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">(ristiriita: asetusarvo 15 %)</text>
+<text x="769" y="408" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">3  itsekuumeneminen → kiinni</text>
+<text x="769" y="428" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">4  muuten valvonta</text>
+<text x="769" y="448" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">+ näytteenoton prioriteetti</text>
+<text x="769" y="468" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">+ hälytystaso</text>
+<text x="769" y="488" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">inertointi: miehistö päättää</text>
+<rect x="1115" y="150" width="320" height="190" rx="10" fill="#ffffff" stroke="#43a047" stroke-width="2.5"/>
+<rect x="1115" y="150" width="320" height="34" rx="10" fill="#43a047" stroke="#43a047" stroke-width="0"/>
+<rect x="1115" y="170" width="320" height="14" rx="0" fill="#43a047" stroke="#43a047" stroke-width="0"/>
+<text x="1275.0" y="173" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#ffffff">vent_control</text>
+<text x="1129" y="206" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">PI: CH₄ → tuulettimen nopeus</text>
+<text x="1129" y="226" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">anti-windup, minimivirtaus</text>
+<text x="1129" y="246" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">lukitus: tuuletin vasta kun pelti</text>
+<text x="1145" y="266" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">auki, pelti kiinni vasta kun</text>
+<text x="1145" y="286" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">tuuletin on pysähtynyt</text>
+<text x="1129" y="306" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">merkkivalot hälytystasosta</text>
+<rect x="1115" y="455" width="320" height="190" rx="10" fill="#ffffff" stroke="#43a047" stroke-width="2.5"/>
+<rect x="1115" y="455" width="320" height="34" rx="10" fill="#43a047" stroke="#43a047" stroke-width="0"/>
+<rect x="1115" y="475" width="320" height="14" rx="0" fill="#43a047" stroke="#43a047" stroke-width="0"/>
+<text x="1275.0" y="478" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#ffffff">rover_control</text>
+<text x="1129" y="511" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">tilakone: SELECT → MOVE →</text>
+<text x="1145" y="531" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">LOWER → SETTLE → SAMPLE →</text>
+<text x="1145" y="551" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">RAISE, aikakatkaisu → FAULT</text>
+<text x="1129" y="571" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">PID-asentosäätö kiskolla</text>
+<text x="1129" y="591" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">näyte hyväksytään vain, kun</text>
+<text x="1145" y="611" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">sondi on asettunut aukkoon</text>
+<polyline points="180,365 180,470" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+<text x="190" y="412" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="start" fill="#333" stroke="#ffffff" stroke-width="4" paint-order="stroke">actuator_state</text>
+<text x="190" y="428" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="start" fill="#555">mitattu tila + simulaatioaika</text>
+<polyline points="310,505 415,505" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+<text x="362" y="497" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#333" stroke="#ffffff" stroke-width="4" paint-order="stroke">sensors</text>
+<polyline points="310,300 415,345" fill="none" stroke="#777" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrd)"/>
+<text x="362" y="304" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#777" stroke="#ffffff" stroke-width="4" paint-order="stroke">actuator_state</text>
+<polyline points="675,405 755,405" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+<text x="715" y="397" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#333" stroke="#ffffff" stroke-width="4" paint-order="stroke">state</text>
+<polyline points="545,290 545,228 1115,228" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+<text x="830" y="220" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#333" stroke="#ffffff" stroke-width="4" paint-order="stroke">state</text>
+<polyline points="1015,310 1115,310" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+<text x="1065" y="288" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#333" stroke="#ffffff" stroke-width="4" paint-order="stroke">vent_command</text>
+<text x="1065" y="303" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#333" stroke="#ffffff" stroke-width="4" paint-order="stroke">alert</text>
+<polyline points="1015,515 1115,515" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+<text x="1065" y="507" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#333" stroke="#ffffff" stroke-width="4" paint-order="stroke">sampling_plan</text>
+<polyline points="1275,150 1275,128 230,128 230,150" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+<text x="750" y="121" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#333" stroke="#ffffff" stroke-width="4" paint-order="stroke">fan_cmd, damper_cmd, status_led, alert_led</text>
+<polyline points="1115,600 545,600 545,525" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+<text x="830" y="592" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#333" stroke="#ffffff" stroke-width="4" paint-order="stroke">zone_sample</text>
+<polyline points="180,645 180,690 1180,690 1180,645" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+<text x="830" y="682" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#333" stroke="#ffffff" stroke-width="4" paint-order="stroke">probe_reading</text>
+<polyline points="1380,645 1380,728 40,728 40,255 50,255" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+<text x="750" y="721" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="#333" stroke="#ffffff" stroke-width="4" paint-order="stroke">rover_vel_cmd, probe_cmd</text>
+<text x="1275" y="362" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#777">+ actuator_state: pellin ja tuulettimen tila</text>
+<text x="1275" y="445" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#777">+ actuator_state: asento, nopeus, sondi</text>
+<rect x="30" y="770" width="1440" height="70" rx="10" fill="#fafafa" stroke="#bbb" stroke-width="1"/>
+<text x="50" y="795" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">Kaikki aiheet ovat /hold/-nimiavaruudessa (esim. /hold/state). recorder tallentaa todellisen tilan (truth), maailmamallin, päätökset ja toimilaitteiden tilan CSV-lokiin todentamista varten.</text>
+<text x="50" y="818" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" text-anchor="start" fill="#222">Aikapohja: Webotsin simulaatioaika actuator_state-viestissä; prosessiaika = simulaatioaika × 600. Katkoviiva = mitattu toimilaitteiden tila.</text>
+</svg>
