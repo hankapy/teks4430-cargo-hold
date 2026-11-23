@@ -107,7 +107,7 @@ class PlantSim(Node):
             )
         if self.t_h >= self.duration_h:
             self.finished = True
-            self.get_logger().info("scenario finished")
+            self.get_logger().info("scenario finished, shutting down")
 
     def publish_truth(self):
         zs = self.hold.zones
@@ -124,7 +124,9 @@ def main(args=None):
     rclpy.init(args=args)
     node = PlantSim()
     try:
-        rclpy.spin(node)
+        # exit when the scenario ends; the launch file then stops all nodes
+        while rclpy.ok() and not node.finished:
+            rclpy.spin_once(node, timeout_sec=0.1)
     except KeyboardInterrupt:
         pass
     finally:

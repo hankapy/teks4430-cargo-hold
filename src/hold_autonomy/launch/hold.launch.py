@@ -37,14 +37,16 @@ def generate_launch_description():
     def node(name, params=None):
         return Node(package="hold_autonomy", executable=name, parameters=params or [], output="screen")
 
+    plant = node("plant_sim", [{"scenario": scenario, "time_scale": time_scale,
+                                "duration_h": duration, "co_drift_ppm_h": drift}])
+
     return LaunchDescription([
         DeclareLaunchArgument("scenario", default_value="coal_both"),
         DeclareLaunchArgument("time_scale", default_value="600.0"),
         DeclareLaunchArgument("duration_h", default_value="120.0"),
         DeclareLaunchArgument("co_drift", default_value="0.0"),
         driver,
-        node("plant_sim", [{"scenario": scenario, "time_scale": time_scale,
-                            "duration_h": duration, "co_drift_ppm_h": drift}]),
+        plant,
         node("perception"),
         node("hold_manager"),
         node("vent_control"),
@@ -54,6 +56,13 @@ def generate_launch_description():
             event_handler=launch.event_handlers.OnProcessExit(
                 target_action=driver,
                 on_exit=[launch.actions.EmitEvent(event=launch.events.Shutdown())],
+            )
+        ),
+        # scenario finished: stop all nodes
+        launch.actions.RegisterEventHandler(
+            event_handler=launch.event_handlers.OnProcessExit(
+                target_action=plant,
+                on_exit=[launch.actions.EmitEvent(event=launch.events.Shutdown(reason="scenario finished"))],
             )
         ),
     ])
