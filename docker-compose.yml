@@ -19,6 +19,8 @@ services:
     volumes:
       - ./src:/ros2_ws/src
       - ./worlds:/ros2_ws/worlds
+      - ./logs:/ros2_ws/logs  # recorder CSV logs, visible on the host
+      - ./analysis:/ros2_ws/analysis  # plot and simulation scripts
       - ros2_proj_build:/ros2_ws/build
       - ros2_proj_install:/ros2_ws/install
       - ros2_proj_log:/ros2_ws/log

@@ -27,3 +27,6 @@ analysis/out/
 # Webots project files
 src/worlds/.*.wbproj
 src/worlds/.*.jpg
+
+# Recorder logs
+logs/

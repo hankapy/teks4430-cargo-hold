@@ -50,12 +50,12 @@ Ympäristö on sama kuin kurssin tehtävissä (Webots natiivisti, ROS 2 Jazzy De
    ros2 launch hold_autonomy hold.launch.py scenario:=coal_both
    ```
    Skenaariot: `coal_methane`, `coal_selfheat`, `coal_both`, `limestone`. Anturivika: `co_drift:=1.0`. Kesto: `duration_h:=120.0` (≈ 12 min reaaliajassa).
-3. Loki tallentuu kansioon `/ros2_ws/logs/`. Kuvaaja ja tunnusluvut: `python3 analysis/plot_run.py /ros2_ws/logs/<tiedosto>.csv`
+3. Loki tallentuu kontissa kansioon `/ros2_ws/logs/` (koneellasi projektin `logs/`). Kuvaaja ja tunnusluvut kontissa: `python3 /ros2_ws/analysis/plot_run.py /ros2_ws/logs/<tiedosto>.csv`
 
-Ilman ROSia:
+Ilman Webotsia (kontissa):
 ```bash
-cd src/hold_autonomy && python3 -m pytest test     # 29 yksikkötestiä
-python3 analysis/run_closed_loop.py                # kaikki skenaariot + IMSBC-vertailu
+cd /ros2_ws/src/hold_autonomy && python3 -m pytest test   # 29 yksikkötestiä
+python3 /ros2_ws/analysis/run_closed_loop.py              # kaikki skenaariot + IMSBC-vertailu
 ```
 
 ## Tulokset
